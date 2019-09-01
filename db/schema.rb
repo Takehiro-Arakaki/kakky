@@ -10,15 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_10_014820) do
+ActiveRecord::Schema.define(version: 2019_08_18_023751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "levels", force: :cascade do |t|
-    t.string "level"
+  create_table "admins", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+  end
+
+  create_table "levels", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_levels_on_name"
+  end
+
+  create_table "questions", id: :serial, force: :cascade do |t|
+    t.integer "level_id", null: false
+    t.string "question", null: false
+    t.integer "question_num", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "selects", id: :serial, force: :cascade do |t|
+    t.bigint "question_id_id", null: false
+    t.string "content", null: false
+    t.boolean "is_right", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id_id"], name: "index_selects_on_question_id_id"
   end
 
 end

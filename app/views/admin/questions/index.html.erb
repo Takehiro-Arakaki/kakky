@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1>Questions</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Question</th>
+      </tr>
+    </thead>
+  </table>
+
+    <tbody>
+      <% @questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.question_num, edit_admin_level_question_path(@level, question) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    <%= paginate @questions, theme: "bootstrap" %>
+
+  <br>
+  <%= link_to 'Back', admin_levels_path %>
+</div>

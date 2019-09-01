@@ -1,0 +1,17 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Level:</strong>
+    <%# <%= @question.level_id %>
+  </p>
+
+  <p>
+    <strong>Question:</strong>
+    <%= simple_format @question.question %>
+    <%# 改行を自動的に入れてくれる %>
+  </p>
+
+  <%= link_to 'Back', admin_level_questions_path(@level) %>
+</div>
