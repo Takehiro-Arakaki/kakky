@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
   
   belongs_to :level
-  has_many :select,    dependent: :destroy
+  has_many :question_selects,    dependent: :destroy
 
 end
