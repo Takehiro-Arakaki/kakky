@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  
+
   namespace :admin do
-    
+
     resources :levels do
-      resources :questions do
-      end
+      resources :questions
     end
-    resources :selects do
-  end
-  
+    resources :question_selects
+    resources :users
+
   end
 end
