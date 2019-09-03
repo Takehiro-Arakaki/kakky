@@ -1,14 +1,14 @@
 class Admin::QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
   # IDを一件ずつ編集したい時はonlyアクションで分ける
-  before_action :set_level
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
   # レベルのパラメーターを取得
+  before_action :set_level
 
 
   def index
     @questions = @level.questions
-    @questions = @questions.page(params[:page]).per(10).order(id: :ASC)
     #kaminari10件ずつ表示
+    @questions = @questions.page(params[:page]).per(10).order(id: :ASC)
   end
   
   def show
