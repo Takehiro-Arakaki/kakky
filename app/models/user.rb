@@ -8,6 +8,7 @@ class User < ApplicationRecord
   default_scope { order(:id) }
 
   #Validations
-  # validates  :name, :email, :password_digest
+  validates :name, :email, presence: true
+  validates :email, uniqueness: true
 
 end
