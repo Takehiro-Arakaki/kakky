@@ -23,6 +23,11 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'bootstrap-sass'
 
+# Devise
+gem 'devise'
+gem 'omniauth-twitter'
+
+
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
