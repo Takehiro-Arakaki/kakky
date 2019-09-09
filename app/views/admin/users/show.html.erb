@@ -7,27 +7,27 @@
     <tbody>
       <tr>
         <th scope="col" ><%= User.human_attribute_name(:id) %></th>
-        <td><%= user.id %></td>
+        <td><%= @user.id %></td>
       </tr>
       <tr>
         <th scope="col" ><%= User.human_attribute_name(:name) %></th>
-        <td><%= user.name %></td>
+        <td><%= @user.name %></td>
       </tr>
       <tr>
         <th scope="col" ><%= User.human_attribute_name(:email) %></th>
-        <td><%= user.email %></td>
+        <td><%= @user.email %></td>
       </tr>
       <tr>
         <th scope="col" ><%= User.human_attribute_name(:admin) %></th>
-        <td><%= user.admin? ? "あり": "なし" %></td>
+        <td><%= @user.admin? ? "あり": "なし" %></td>
       </tr>
       <tr>
         <th scope="col" ><%= User.human_attribute_name(:created_at) %></th>
-        <td><%= user.created_at %></td>
+        <td><%= @user.created_at %></td>
       </tr>
       <tr>
         <th scope="col" ><%= User.human_attribute_name(:updated_at) %></th>
-        <td><%= user.updated_at %></td>
+        <td><%= @user.updated_at %></td>
       </tr>
     </tbody>
   </table>

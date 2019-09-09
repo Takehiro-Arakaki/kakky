@@ -9,7 +9,7 @@
     <% if flash[:alert] %>
       <div class="alert alert-danger" role="alert" >
         <p><%= raw(sanitize(alert).gsub($RS, '<br />')) %></p>
-        <%# TODO: raw, santitize, gsub, $RS %>
+        <%# TODO: santitize xss対策, gsub 置換 %>
       </div>
     <% end %>
   </div>
