@@ -17,14 +17,13 @@
           <%= link_to 'プロフィール変更', edit_sysadmin_registration_path %>
           <%= link_to 'ログアウト', destroy_sysadmin_session_path, method: :delete %>
         <% else %>
-          <%= link_to 'サインアップ', new_sysadmin_registration_path %>
-          <%= link_to 'ログイン', new_sysadmin_session_path %>
+          <%# <%= link_to 'サインアップ', new_sysadmin_registration_path %>
+          <%# <%= link_to 'ログイン', new_sysadmin_session_path %>
         <% end %>
       </nav>
   </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'shared/notice' %>
 
     <%= yield %>
   </body>

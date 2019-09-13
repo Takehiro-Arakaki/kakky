@@ -1,15 +1,5 @@
 <%= form_with(model: question, local: true, url: admin_level_question_path) do |form| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
-      <ul>
-      <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render "shared/notice" %>
 
   <div class="field form-group col-md-8">
     <%= form.label :question %>

@@ -1,6 +1,10 @@
+<%# ログイン画面 %>
 <div class='container'>
   <h2>Log in</h2>
+<%# notice %>
+  <%= render 'shared/notice' %>
 
+  <%# 遷移先はapplcation.contorllerにてoverrideしている %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />

@@ -1,6 +1,7 @@
 module Admin
   class QuestionSelectsController < ApplicationController
     before_action :set_question_select, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_sysadmin!
 
     # GET /admin/question_selects
     # GET /admin/question_selects.json

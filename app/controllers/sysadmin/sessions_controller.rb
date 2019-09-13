@@ -14,9 +14,10 @@ class Sysadmin::SessionsController < Devise::SessionsController
   # end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+    flash[:alert] = 'Log out！！'
+  end
 
   # protected
 
@@ -24,4 +25,5 @@ class Sysadmin::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
 end

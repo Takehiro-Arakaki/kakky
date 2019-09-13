@@ -1,5 +1,4 @@
 <% if flash.present? %>
-  <div class="card">
     <% if flash[:notice] %>
       <div class="alert alert-success" role="alert" >
         <p><%= notice %></p>
@@ -9,8 +8,6 @@
     <% if flash[:alert] %>
       <div class="alert alert-danger" role="alert" >
         <p><%= raw(sanitize(alert).gsub($RS, '<br />')) %></p>
-        <%# TODO: santitize xss対策, gsub 置換 %>
       </div>
     <% end %>
-  </div>
-<% end%>
+<% end %>

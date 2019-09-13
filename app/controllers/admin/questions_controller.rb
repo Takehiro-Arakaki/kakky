@@ -4,13 +4,15 @@ class Admin::QuestionsController < ApplicationController
   # レベルのパラメーターを取得
   before_action :set_level
 
+  before_action :authenticate_sysadmin!
+
 
   def index
     @questions = @level.questions
     #kaminari10件ずつ表示
     @questions = @questions.page(params[:page]).per(10).order(id: :ASC)
   end
-  
+
   def show
   end
 
@@ -37,7 +39,7 @@ class Admin::QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_level_question_url(@level, @question), 
+      redirect_to admin_level_question_url(@level, @question),
                   notice: 'Question was successfully updated.'
     else
       render :edit
