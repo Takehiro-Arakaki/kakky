@@ -1,9 +1,5 @@
 module Admin
   class LevelsController < BaseController
-    # ログインしている者のみ認証
-    before_action :authenticate_sysadmin!
-
-    layout 'admin'
 
     def index
       @levels = Level.all

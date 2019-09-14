@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :sysadmin do
+  factory :user do
     
   end
 end

@@ -14,11 +14,11 @@
       <nav>
         <%= render 'shared/notice' %>
 
-        <% if sysadmin_signed_in? %>
+        <% if user_signed_in? %>
           <%# <strong><%= link_to current_user.name, home_show_path</strong> %>
-          <%= link_to 'プロフィール変更', edit_sysadmin_registration_path %>
-          <%= link_to 'ログアウト', destroy_sysadmin_session_path, method: :delete %>
-          <%= link_to 'サインアップ', new_sysadmin_registration_path %>
+          <%= link_to 'プロフィール変更', edit_user_registration_path %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <%= link_to 'サインアップ', new_user_registration_path %>
         <% end %>
       </nav>
   </header>
