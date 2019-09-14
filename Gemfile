@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 
 # Devise
 gem 'devise'
+gem 'cancancan'
 gem 'omniauth-twitter'
 
 

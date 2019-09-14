@@ -1,7 +1,5 @@
 <div class="container">
 
-  <%= link_to 'サインアップ', new_sysadmin_registration_path %>
-
 	<h1>Levels</h1>
 			<% @levels.each do |level| %>
 					<%= link_to level.name, admin_level_questions_path(level), class: 'aa' %>
