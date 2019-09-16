@@ -49,6 +49,7 @@ ja:
       user:
         signed_in: "ログインしました。"
         signed_out: "ログアウトしました。"
+        status_disabled: 'アカウントが無効です'
       already_signed_out: "Signed out successfully."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
