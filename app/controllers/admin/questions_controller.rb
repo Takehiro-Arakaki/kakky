@@ -1,8 +1,6 @@
 module Admin
   class QuestionsController < BaseController
-    # IDを一件ずつ編集したい時はonlyアクションで分ける
     before_action :set_question, only: [:show, :edit, :update, :destroy]
-    # レベルのパラメーターを取得
     before_action :set_level
 
 

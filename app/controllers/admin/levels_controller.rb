@@ -3,6 +3,9 @@ module Admin
 
     def index
       @levels = Level.all
+      if flash.present?
+        flash.now[:notice] = 'Log in！！'
+      end
     end
 
     private

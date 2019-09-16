@@ -10,7 +10,7 @@ module Users
 
     # 管理者ユーザーしかアカウント作成できないようにする
     before_action :check_admin, only: %i[new, create]
-    before_action :guard_action!, only: %i[edit update destroy]
+    # before_action :guard_action!, only: %i[edit update destroy]
 
     # GET /resource/sign_up
     # def new
@@ -71,9 +71,9 @@ module Users
     private
 
     # 管理者のアカウントをedit update destroyをしたときにエラーを発生させる
-    def guard_action!
-      raise ActionController::RoutingError, 'NOT FOUND'
-    end
+    # def guard_action!
+    #   raise ActionController::RoutingError, 'NOT FOUND'
+    # end
 
   end
 end
