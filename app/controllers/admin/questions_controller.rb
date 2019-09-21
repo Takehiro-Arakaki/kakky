@@ -1,13 +1,11 @@
 module Admin
   class QuestionsController < BaseController
-    before_action :set_question, only: [:show, :edit, :update, :destroy]
-    before_action :set_level
-
-
+    before_action :set_question, only: %i[show edit update destroy]
+    before_action :set_level, only: %i[index show]
 
     def index
       @questions = @level.questions
-      #kaminari10件ずつ表示
+      # Kaminari10件ずつ表示
       @questions = @questions.page(params[:page]).per(10).order(id: :ASC)
     end
 
@@ -37,7 +35,7 @@ module Admin
 
     def update
       if @question.update(question_params)
-        redirect_to admin_level_question_url(@level, @question),
+        redirect_to admin_level_questions_url(@question),
                     notice: 'Question was successfully updated.'
       else
         render :edit
@@ -45,16 +43,17 @@ module Admin
     end
 
     private
-      def set_question
-        @question = Question.find(params[:id])
-      end
+    def set_question
+      @question = Question.find(params[:id])
+    end
 
-      def set_level
-        @level = Level.find(params[:level_id])
-      end
+    def set_level
+      @level = Level.find(params[:level_id])
+    end
 
-      def question_params
-        params.require(:question).permit(:level_id, :question)
-      end
+    def question_params
+      params.require(:question).permit(:level_id, :question_id, :question_num, :content)
+    end
+
   end
 end

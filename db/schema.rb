@@ -24,16 +24,16 @@ ActiveRecord::Schema.define(version: 2019_09_14_092110) do
 
   create_table "question_selects", id: :serial, force: :cascade do |t|
     t.integer "question_id", null: false
-    t.string "content", null: false
-    t.boolean "is_right", null: false
+    t.text "content", null: false
+    t.boolean "answer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "questions", id: :serial, force: :cascade do |t|
     t.integer "level_id", null: false
-    t.string "question", null: false
-    t.integer "question_num", null: false
+    t.string "question_num", null: false
+    t.text "content", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

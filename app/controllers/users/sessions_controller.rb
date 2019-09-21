@@ -6,6 +6,9 @@ module Users
     # GET /resource/sign_in
     def new
       super
+      if flash[:alert]
+        flash.delete(:alert)
+      end
     end
 
     # POST /resource/sign_in

@@ -2,9 +2,8 @@
 
 	<h1>Levels</h1>
 			<% @levels.each do |level| %>
-					<%= link_to level.name, admin_level_questions_path(level), class: 'aa' %>
+					<%= link_to level.name, admin_level_questions_path(level) %>
 			<% end %>
-
 	<br>
 
 	<%= link_to 'Back', root_path %>

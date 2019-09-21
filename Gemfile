@@ -16,17 +16,15 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-# gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'seed-fu'
 gem 'kaminari'
-gem 'kaminari-bootstrap', '~> 3.0.1'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 
 # Devise
 gem 'devise'
-gem 'cancancan'
-gem 'omniauth-twitter'
+# gem 'omniauth-twitter'
 
 
 

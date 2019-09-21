@@ -1,24 +1,25 @@
 <div class="container">
 
-  <h1>Questions</h1>
+  <h1><%= @level.name %></h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Question</th>
-      </tr>
-    </thead>
-  </table>
+  <% @questions.each do |question| %>
+    <div class='contaniner'>
+      <div class='row'>
+        <div class='col-md-6 mt-4'>
+          <%= link_to question.question_num, edit_admin_level_question_path(@level, question),
+                                            class: "form-control text-sm-left" %>
+        </div>
+      </div>
+    <div>
+  <% end %>
 
-    <tbody>
-      <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to question.question_num, edit_admin_level_question_path(@level, question) %></td>
-      </tr>
-      <% end %>
-    </tbody>
-    <%= paginate @questions, theme: "bootstrap" %>
+  <div class='row'>
+    <div class='col-md-5 mt-4'>
+      <%= paginate @questions, theme: "bootstrap" %>
+    </div>
+    <div class='col-md-4 mt-4'>
+      <%= link_to 'Back', admin_levels_path %>
+    </div>
+  </div>
 
-  <br>
-  <%= link_to 'Back', admin_levels_path %>
 </div>

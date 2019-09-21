@@ -1,4 +1,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+# Rspecではcapybaraをrequireする必要がある
 require 'capybara/rspec'
 
 RSpec.configure do |config|
