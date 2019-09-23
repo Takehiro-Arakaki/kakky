@@ -6,8 +6,8 @@ module Admin
     end
 
     private
-      def level_params
-        params.require(:level).permit(:level)
-      end
+    # def level_params
+    #     params.require(:level).permit(:level)
+    # end
   end
 end

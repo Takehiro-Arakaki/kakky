@@ -2,6 +2,7 @@ module Admin
   class QuestionsController < BaseController
     before_action :set_question, only: %i[show edit update destroy]
     before_action :set_level, only: %i[index show]
+    # before_action :set_levels
 
     def index
       @questions = @level.questions
@@ -51,8 +52,12 @@ module Admin
       @level = Level.find(params[:level_id])
     end
 
+    def set_levels
+      @levels = Level.all
+    end
+
     def question_params
-      params.require(:question).permit(:level_id, :question_id, :question_num, :content)
+      params.require(:question).permit(:id, :level_id, :question_num, :content)
     end
 
   end

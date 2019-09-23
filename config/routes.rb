@@ -15,6 +15,12 @@ Rails.application.routes.draw do
     resources :question_selects
   end
 
-  resources :visitors
+  namespace :player do
+    resources :games do
+      collection do
+        get :decision
+      end
+    end
+  end
 
 end
