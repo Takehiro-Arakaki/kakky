@@ -3,7 +3,7 @@ module Player
 
     before_action :set_level, only: %i[index show update]
     before_action :set_question, only: %i[show edit update destroy]
-    # before_action :set_question, only: %i[index]
+    before_action :set_question, only: %i[show]
 
     # GET /questions
     # GET /questions.json
@@ -19,9 +19,6 @@ module Player
     # GET /questions/1
     # GET /questions/1.json
     def show
-      @questions = @level.questions
-      # Kaminari10件ずつ表示
-      @questions = @questions.page(params[:page]).per(10).order(id: :ASC)
     end
 
     # GET /questions/new
