@@ -1,0 +1,10 @@
+<div class="container">
+  <p>
+    <strong>Question</strong>
+    <%# 改行を自動的に入れてくれる %>
+    <%= @question.question_num %>
+    <%= simple_format @question.content %>
+  </p>
+
+  <%= link_to 'Back', player_level_questions_path(@level) %>
+</div>

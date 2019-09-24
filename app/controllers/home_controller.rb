@@ -1,7 +1,12 @@
 class HomeController < ApplicationController
 
-    def index
-    @level = Level.find(2)
-    end
+	def index
+		if flash.present?
+			flash.now[:alert] = 'Log out！！'
+		end
+	end
+
+	def show
+	end
 
 end

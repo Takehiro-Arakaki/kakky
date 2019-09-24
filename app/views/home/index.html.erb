@@ -1,7 +1,5 @@
-<div>
+<div class="container">
   <h1>Home</h1>
-
-  <P><%= link_to 'admin', levels_path %></P>
-  <P><%= link_to 'user', "#" %></P>
-
+  <%= link_to 'admin', new_user_session_path %>
+  <P><%= link_to 'play', player_levels_path %></P>
 </div>
