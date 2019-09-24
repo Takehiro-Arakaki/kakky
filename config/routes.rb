@@ -16,10 +16,8 @@ Rails.application.routes.draw do
   end
 
   namespace :player do
-    resources :games do
-      collection do
-        get :decision
-      end
+    resources :levels do
+      resources :questions
     end
   end
 

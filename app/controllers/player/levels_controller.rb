@@ -1,4 +1,4 @@
-module Admin
+module Player
   class LevelsController < BaseController
 
     def index

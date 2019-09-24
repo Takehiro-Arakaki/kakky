@@ -1,7 +1,7 @@
 module Admin
   class QuestionsController < BaseController
     before_action :set_question, only: %i[show edit update destroy]
-    before_action :set_level, only: %i[index show]
+    before_action :set_level, only: %i[index show update]
     # before_action :set_levels
 
     def index
@@ -36,7 +36,7 @@ module Admin
 
     def update
       if @question.update(question_params)
-        redirect_to admin_level_questions_url(@question),
+        redirect_to admin_level_question_url(@level, @question),
                     notice: 'Question was successfully updated.'
       else
         render :edit
