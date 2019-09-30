@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_09_14_092110) do
   create_table "question_selects", id: :serial, force: :cascade do |t|
     t.integer "question_id", null: false
     t.text "content", null: false
-    t.boolean "answer", null: false
+    t.boolean "answer", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

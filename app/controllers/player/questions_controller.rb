@@ -10,7 +10,7 @@ module Player
     def index
       @questions = @level.questions
       # Kaminari10件ずつ表示
-      @questions = @questions.page(params[:page]).per(10).order(id: :ASC)
+      @questions = @questions.page(params[:page]).per(10)
     end
 
     def selection

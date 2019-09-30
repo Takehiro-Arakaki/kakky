@@ -1,13 +1,25 @@
 <div class='container'>
   <h1>Editing Question</h1>
 
-  <%= form_with(model: @question, local: true, url: admin_level_question_path) do |form| %>
+  <%= form_with(model: @question, local: true,
+                url: admin_level_question_path) do |form| %>
+
     <%= render 'shared/notice' %>
 
-    <div class='field form-group col-md-8'>
+    <div class='field form-group col-md-8 px-0'>
       <%= form.label :content %>
       <%= form.text_area :content, class: 'form-control', rows: '10'%>
     </div>
+
+    <div class='row p-0'>
+      <%= form.fields_for :question_selects, @question_selects do |field| %>
+        <div class='col-md-2 px-0 ml-2'>
+          <%= field.text_area :content, class: 'form-control', rows: '3' %>
+        </div>
+      <% end %>
+    </div>
+
+    <br />
 
     <div class='row'>
       <div class='col-6'></div>
@@ -18,7 +30,6 @@
         <%= link_to 'Back', admin_level_questions_path %>
       </div>
     </div>
-
   <% end %>
 
 </div>
