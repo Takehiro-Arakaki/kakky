@@ -1,12 +1,22 @@
 <div class="container">
-    <strong>Question</strong>
     <%# simple_format: 改行を入れてくれる %>
+
     <%= @question.question_num %>
-    <%= simple_format @question.content %>
+    <div class= 'form-control h-auto w-75 my-3'>
+      <%= simple_format @question.content %>
+    </div>
 
-    <% @question.question_selects.each do |question_select| %>
-      <%= simple_format question_select.content %>
-    <% end %>
+      <% @question.question_selects.each do |question_select| %>
+        <div class='row p-0 m-2'>
+          <div class='form-control col-sm-6 h-auto'>
+            <%= simple_format question_select.content %>
+          </div>
+          <div class='form-control col-sm-1 ml-2 text-center'>
+            <%= question_select.answer %>
+          </div>
+        </div>
+      <% end %>
 
-  <%= link_to 'Back', admin_level_questions_path(@level) %>
+    <%= link_to 'Back', admin_level_questions_path(@level) %>
+
 </div>

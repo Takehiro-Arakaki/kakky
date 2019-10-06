@@ -6,25 +6,27 @@
 
     <%= render 'shared/notice' %>
 
-    <div class='field form-group col-md-8 px-0'>
+    <div class='input-group-text col-md-8 px-0'>
       <%= form.label :content %>
       <%= form.text_area :content, class: 'form-control', rows: '10'%>
     </div>
 
-    <div class='row p-0'>
-      <%= form.fields_for :question_selects, @question_selects do |field| %>
-        <div class='col-md-2 px-0 ml-2'>
+    <%= form.fields_for :question_selects, @question_selects do |field| %>
+      <div class="input-group-text  col-md-8 px-0 mt-5">
           <%= field.text_area :content, class: 'form-control', rows: '3' %>
-        </div>
-      <% end %>
-    </div>
+      </div>
+
+      <%= render 'question_select', field: field, question_selects: @question_selects %>
+
+    <% end %>
+
 
     <br />
 
     <div class='row'>
       <div class='col-6'></div>
       <div class='actions col-1'>
-        <%= form.submit :submit, class: 'btn btn-primary'%>
+        <%= form.submit :submit, class: 'btn btn-danger'%>
       </div>
       <div class='col-1'>
         <%= link_to 'Back', admin_level_questions_path %>
