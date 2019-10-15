@@ -8,6 +8,13 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations'
   }
 
+  # APIコントローラへのルーティング
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :questions, only: [:index, :show]
+    end
+  end
+
   namespace :admin do
     resources :levels do
       resources :questions

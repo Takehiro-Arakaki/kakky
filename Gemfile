@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'seed-fu'
 gem 'active_decorator'
+gem 'webpacker', '~> 4.x'
 
 # Devise
 gem 'devise'
