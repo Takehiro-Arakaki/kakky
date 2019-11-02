@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_09_14_092110) do
 
   create_table "questions", id: :serial, force: :cascade do |t|
     t.integer "level_id", null: false
+    t.string "title"
     t.string "question_num", null: false
     t.text "content", default: "", null: false
     t.datetime "created_at", null: false
