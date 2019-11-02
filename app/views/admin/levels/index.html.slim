@@ -1,0 +1,9 @@
+.container
+
+	h1 Levels
+
+	h4
+		- @levels.each do |level|
+			= link_to level.name, admin_level_questions_path(level), class: 'ml-3'
+
+	= link_to 'Back', root_path

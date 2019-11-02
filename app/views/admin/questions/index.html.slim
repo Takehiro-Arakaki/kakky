@@ -1,13 +1,13 @@
 .container
-
   h1 = @level.name
 
   - @questions.each do |question|
-    .contaniner
-      .row
-        .col-md-6.mt-4
-          = link_to question.question_num, edit_admin_level_question_path(@level, question),
-                                            class: "form-control text-sm-left"
+    = link_to edit_admin_level_question_path(@level, question) do
+      .form-control.w-50.mt-3
+        .row
+          / .form-control.mt-3
+          .col-md-2 = question.question_num
+          .col-md-1 = question.title
 
   .row
     .col-md-5.mt-4
