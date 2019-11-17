@@ -24,6 +24,8 @@ gem 'active_decorator'
 gem 'webpacker', '~> 4.x'
 gem 'slim-rails'
 gem 'html2slim'
+gem 'popper_js'
+
 # Devise
 gem 'devise'
 # gem 'omniauth-twitter'
