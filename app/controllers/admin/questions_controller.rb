@@ -8,6 +8,10 @@ module Admin
       @questions = @level.questions
       # Kaminari 10件ずつ表示
       @questions = @questions.page(params[:page]).per(10)
+      # @questions.each do |question|
+      #   @question_selects = question.question_selects
+      #     4.times { @question_selects.new } if @question_selects.size.zero?
+      # end
     end
 
     def show

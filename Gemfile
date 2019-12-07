@@ -18,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'kaminari'
 gem 'seed-fu'
 gem 'active_decorator'
@@ -25,6 +26,7 @@ gem 'webpacker', '~> 4.x'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'popper_js'
+
 
 # Devise
 gem 'devise'

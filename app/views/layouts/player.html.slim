@@ -9,8 +9,9 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    = render 'shared/player_nav'
 
-    = render 'shared/notice'
-    / = link_to 'サインアップ', new_user_registration_path
-
+    div.container
+      = render 'shared/notice'
     = yield
+

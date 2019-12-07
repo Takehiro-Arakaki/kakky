@@ -2,7 +2,6 @@ module Player
   class QuestionsController < BaseController
 
     before_action :set_level, only: %i[index show update]
-    before_action :set_question, only: %i[show edit update destroy]
     before_action :set_question, only: %i[show]
 
     # GET /questions

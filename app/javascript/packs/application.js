@@ -8,6 +8,15 @@
 // layout file, like app/views/layouts/application.html.erb
 
 
+require("jquery")
+
+import 'src/js/test';
+import 'src/js/drop_field';
+
+import "jquery"
+global.$ = require('jquery')
+
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

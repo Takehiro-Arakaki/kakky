@@ -1,0 +1,17 @@
+.container
+  p
+    strong Question
+    / 改行を自動的に入れてくれる
+    = @question.question_num
+    .form-control.w-50
+      = simple_format @question.content
+
+  .answer
+    - @question.question_selects.each do |question_select|
+      .row.p-0.m-2
+        .form-control.col-sm-6.h-auto
+          = simple_format question_select.content
+  .row
+    .col-md-5
+    .col-md-1
+      = link_to 'Back', player_level_questions_path(@level)

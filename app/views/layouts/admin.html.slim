@@ -1,5 +1,4 @@
-doctype html
-html
+doctype htmlhtml
   head
     title RubyApp
     = csrf_meta_tags
@@ -9,8 +8,10 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    = render 'shared/admin_nav'
 
-    = render 'shared/notice'
-    / = link_to 'サインアップ', new_user_registration_path
+    div.container
+      = render 'shared/notice'
 
     = yield
+
