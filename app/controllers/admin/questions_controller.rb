@@ -31,7 +31,7 @@ module Admin
     def update
       if @question.update(question_params)
         redirect_to admin_level_question_url(@level, @question),
-                    notice: 'Question was successfully updated.'
+                    notice: I18n.t('success.update')
       else
         render :edit
       end

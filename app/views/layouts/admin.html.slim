@@ -1,4 +1,5 @@
-doctype htmlhtml
+doctype html
+html
   head
     title RubyApp
     = csrf_meta_tags
@@ -10,7 +11,7 @@ doctype htmlhtml
   body
     = render 'shared/admin_nav'
 
-    div.container
+    .container
       = render 'shared/notice'
 
     = yield

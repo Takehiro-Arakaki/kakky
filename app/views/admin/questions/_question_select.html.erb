@@ -5,7 +5,8 @@
   <% else %>
     <label class="btn btn-outline-danger" style="width:50%">
   <% end %>
-      <%= field.radio_button 'answer', 1, { checked: question_selects[field.index].answer } %> true
+      <%= field.radio_button 'answer', 1, { checked: question_selects[field.index].answer } %>
+      <%= t('.correct_answer') %>
     </label>
 
   <% if !question_selects[field.index].answer %>
@@ -13,7 +14,8 @@
   <% else %>
     <label class="btn btn-outline-danger" style="width:50%">
   <% end %>
-    <%= field.radio_button 'answer', 0, { checked: !question_selects[field.index].answer } %> false
+    <%= field.radio_button 'answer', 0, { checked: !question_selects[field.index].answer } %>
+    <%= t('.incorrect_answer') %>
   </label>
 </div>
 

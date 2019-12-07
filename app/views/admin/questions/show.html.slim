@@ -8,7 +8,10 @@
     .row.p-0.m-2
       .form-control.col-sm-6.h-auto
         = simple_format question_select.content
-      .form-control.col-sm-1.ml-2.text-center
-        = question_select.answer
-
+      .col-sm-2.ml-2.mt-2.text-center
+        / 動的にクラス分けしています
+        - if question_select.answer
+          .form-control.bg-danger.text-white = t('.correct_answer')
+        - else
+          .form-control = t('.incorrect_answer')
   = link_to 'Back', admin_level_questions_path(@level)

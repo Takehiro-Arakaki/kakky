@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations'
   }
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   # APIコントローラへのルーティング
   namespace :api, {format: 'json'} do
     namespace :v1 do
