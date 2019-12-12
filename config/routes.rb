@@ -28,7 +28,13 @@ Rails.application.routes.draw do
 
   namespace :player do
     resources :levels do
-      resources :questions
+      resources :questions do
+        member do
+          post :result
+          get :correct
+          get :incorrect
+        end
+      end
     end
   end
 

@@ -3,15 +3,20 @@
     strong Question
     / 改行を自動的に入れてくれる
     = @question.question_num
-    .form-control.w-50
+    .form-control.w-50.h-auto
       = simple_format @question.content
 
-  .answer
-    - @question.question_selects.each do |question_select|
-      .row.p-0.m-2
-        .form-control.col-sm-6.h-auto
-          = simple_format question_select.content
+    / モーダル
+  - @question.question_selects.each do |question_select|
+    = link_to result_player_level_question_path, class: 'text-left', method: :post,
+              data: { confirm: "Are you sure?" } do
+      .form-control.w-50.my-2.mr-3.h-auto
+        = simple_format question_select.content
+
   .row
     .col-md-5
     .col-md-1
       = link_to 'Back', player_level_questions_path(@level)
+
+= render 'modal', question: @question
+

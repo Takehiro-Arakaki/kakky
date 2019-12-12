@@ -7,11 +7,14 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-
+require("@rails/ujs").start()
 require("jquery")
 
 import 'src/js/test';
 import 'src/js/drop_field';
+import 'src/js/bootbox_field';
+import 'src/js/answer_field';
+import 'bootstrap';
 
 import "jquery"
 global.$ = require('jquery')

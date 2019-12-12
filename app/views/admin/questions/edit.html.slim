@@ -7,8 +7,8 @@
     = render 'shared/notice'
 
     .input-group-text.col-md-8.px-0
-      = form.label :content
-      = form.text_area :content, class: 'form-control', rows: '10'
+      = form.label :content, class: 'ml-1'
+      = form.text_area :content, class: 'form-control ml-1', rows: '10'
 
     = form.fields_for :question_selects, @question_selects do |field|
       .input-group-text.col-md-8.px-0.mt-5

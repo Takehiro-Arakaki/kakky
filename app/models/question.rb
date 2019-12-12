@@ -1,4 +1,4 @@
-class Question < ApplicationRecord
+class Question < ActiveRecord::Base
 
   belongs_to :level
   has_many :question_selects, dependent: :destroy
@@ -7,4 +7,8 @@ class Question < ApplicationRecord
 
   # Scope
   default_scope { order(:id) }
+
+  def next
+    level.questions.where('id > ?', id).first
+  end
 end

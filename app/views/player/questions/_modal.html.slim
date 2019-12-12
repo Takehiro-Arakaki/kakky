@@ -1,0 +1,14 @@
+.modal.fade#exampleModal tabindex="-1"
+  .modal-dialog
+    .modal-content
+      br
+      h5.modal-body.text-center = t('Are you sure?')
+      br
+      .modal-footer
+        = form_with(model: @question, local: true,
+                    url: result_player_level_question_path,
+                    method: :post,
+                    ) do |form|
+
+          button.btn.btn-secondary type="button" data-dismiss="modal" Close
+          button.btn.btn-danger.ml-2  type="submit" Right!!
