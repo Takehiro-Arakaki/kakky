@@ -70,7 +70,7 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def question_select_params
-        params.require(:question_select).permit(:question_id, :content, :is_right)
+        params.require(:question_select).permit(:question_id, :content, :answer)
       end
   end
 end

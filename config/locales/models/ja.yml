@@ -1,0 +1,17 @@
+ja:
+  activemodel:
+    models:
+      forms/example: サンプル
+    attributes:
+      forms/example:
+        example: サンプル
+
+  activerecord:
+    models:
+      admin/master_replication_progress: サンプル
+      agency/division: サンプル
+
+    attributes:
+      question:
+        content: 問題
+

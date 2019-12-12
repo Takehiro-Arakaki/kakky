@@ -1,0 +1,26 @@
+.container
+  h1 = question.title
+
+  = form_with(model: question, local: true,
+                url: admin_level_question_path(level, question)) do |form|
+
+    = render 'shared/notice'
+
+    .input-group-text.col-md-8.px-0
+      = form.label :content
+      = form.text_area :content, class: 'form-control', rows: '10'
+
+    = form.fields_for :question_selects, question.question_selects do |field|
+      .input-group-text.col-md-8.px-0.mt-5
+        = field.text_area :content, class: 'form-control', rows: '3'
+
+      = render 'question_select', field: field, question_selects: question.question_selects
+
+    br
+
+    .row
+      .col-6
+      .actions.col-1
+        = form.submit :submit, class: 'btn btn-danger'
+      .col-1
+        = link_to 'Back', admin_level_questions_path

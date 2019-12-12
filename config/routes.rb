@@ -8,6 +8,17 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations'
   }
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+  # APIコントローラへのルーティング
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :questions, only: [:index, :show]
+    end
+  end
+
   namespace :admin do
     resources :levels do
       resources :questions
@@ -17,7 +28,13 @@ Rails.application.routes.draw do
 
   namespace :player do
     resources :levels do
-      resources :questions
+      resources :questions do
+        member do
+          post :result
+          get :correct
+          get :incorrect
+        end
+      end
     end
   end
 

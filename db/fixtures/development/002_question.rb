@@ -1,9 +1,9 @@
 Question.destroy_all
 
 question_params = [
-  { id: 1, level_id: 1, question_num: 'Q1' },
-  { id: 2, level_id: 1, question_num: 'Q2' },
-  { id: 3, level_id: 1, question_num: 'Q3' },
+  { id: 1, level_id: 1, question_num: 'Q1', title: 'title01'},
+  { id: 2, level_id: 1, question_num: 'Q2', title: 'title02'},
+  { id: 3, level_id: 1, question_num: 'Q3', title: 'title03'},
   { id: 4, level_id: 1, question_num: 'Q4' },
   { id: 5, level_id: 1, question_num: 'Q5' },
   { id: 6, level_id: 1, question_num: 'Q6' },

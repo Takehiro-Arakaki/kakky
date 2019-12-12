@@ -1,0 +1,14 @@
+.container
+  .text-center
+    = image_tag 'booboo.png', class: 'no-border'
+    h1 不正解でーす
+    br
+
+  .row
+    .col-sm-4
+    .col-sm-3
+      h3
+        = link_to 'Back', player_level_questions_path(@level)
+    .col
+      h3
+        = link_to 'Next', player_level_question_path(@level, @question.next) if @question.next

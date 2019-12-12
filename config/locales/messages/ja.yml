@@ -1,0 +1,13 @@
+# メッセージの設定ファイル
+# コントローラー内で登録成功や警告などのなどのメッセージを設定する場合に使用してください
+# 階層はメッセージの種類(info, alert)とnamespaceの組み合わせとしましょう
+ja:
+  alert:
+    failure: '失敗しました'
+    not_found: '%{model}は見つかりませんでした'
+  info:
+  success:
+    create: 登録しました
+    destroy: 削除しました
+    update: 更新しました
+    sent: 送信しました
