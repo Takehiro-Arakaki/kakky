@@ -6,15 +6,17 @@
     .form-control.w-50.h-auto
       = simple_format @question.content
 
-  / 回答の正解、不正解で遷移先をへんこうする
+  / モーダル
   - @question.question_selects.each do |question_select|
-    button.w-50.my-2.mr-2.text-left.h-auto data-toggle='modal' data-target='#exampleModal'
-      = simple_format question_select.content
+    = link_to result_player_level_question_path, class: 'text-left', method: :post,
+              data: { confirm: "Are you sure?" } do
+      .form-control.w-50.my-2.mr-3.h-auto
+        = simple_format question_select.content
 
   .row
     .col-md-5
     .col-md-1
       = link_to 'Back', player_level_questions_path(@level)
 
-= render 'modal'
+= render 'modal', question: @question
 
