@@ -6,15 +6,27 @@
     .form-control.w-50.h-auto
       = simple_format @question.content
 
-  / 回答の正解、不正解で遷移先をへんこうする
-  - @question.question_selects.each do |question_select|
-    button.w-50.my-2.mr-2.text-left.h-auto data-toggle='modal' data-target='#exampleModal'
-      = simple_format question_select.content
+  = form_with(model: @question, local: true,
+          url: result_player_level_question_path,
+          method: :post,
+          ) do |form|
+    - @question.question_selects.each do |question_select|
+      button.w-50.my-2.mr-2.text-left.h-auto.select_content type='button' data-toggle='modal' data-target='#exampleModal'
+        = simple_format question_select.content
+
+      / answer_fieldのパラメーター
+      span.select_content[style='display: none']
+        = question_select.id
+
+    / controllerのパラメーター
+    = hidden_field_tag :question_select_id
+
+    = render 'modal'
 
   .row
     .col-md-5
     .col-md-1
       = link_to 'Back', player_level_questions_path(@level)
 
-= render 'modal'
+
 

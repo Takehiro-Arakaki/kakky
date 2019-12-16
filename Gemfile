@@ -26,6 +26,7 @@ gem 'webpacker', '~> 4.x'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'popper_js'
+gem 'font-awesome-rails'
 
 
 # Devise

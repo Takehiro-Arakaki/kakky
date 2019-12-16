@@ -1,5 +1,23 @@
 .container
+  .content
+    h1.title.text-center.mt-3
+      span.title-part.line-1
+        = ("Ruby World")
 
-  h1 Home
-  = link_to 'admin', new_user_session_path
-  P = link_to 'play', player_levels_path
+  .row.d-flex.justify-content-center.mt-5
+    .col-sm-4
+      .card.rounded-pill.hover_border.border.border-secondary
+        = link_to player_levels_path do
+          .card-body.text-center
+            i.fas.fa-pen.fa-2x.text-danger
+            h1.my-4.text-secondary
+              = ('学習')
+    .col-sm-4
+      .card.rounded-pill.hover_border.border.border-secondary
+        = link_to new_user_session_path, class: 'text-secondary' do
+          .card-body.text-center
+            i.fas.fa-users-cog.fa-2x
+            h1.my-4.
+              = ('設定')
+
+
