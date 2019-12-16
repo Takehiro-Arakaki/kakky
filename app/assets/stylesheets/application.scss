@@ -26,9 +26,9 @@ $color-title:#EEEEEE;
 $color-line-1:#FF3333;
 
 
-// body{
-//   background: $color-bg;
-// }
+body{
+  // text-align: center;
+}
 .title{
   font-size:7vw;
   .title-part{
@@ -46,4 +46,14 @@ a:hover {
 .hover_scale {
   transform: scale(0.8);
   transition: transform 1s;
+}
+
+.page-item.active
+.page-link {
+  background-color:red;
+  border-color: grey;
+}
+
+.page-link {
+  color:red;
 }

@@ -5,19 +5,19 @@
         = ("Ruby World")
 
   .row.d-flex.justify-content-center.mt-5
-    .col-sm-4
+    .col-sm-3.mr-5
       .card.rounded-pill.hover_border.border.border-secondary
         = link_to player_levels_path do
           .card-body.text-center
             i.fas.fa-pen.fa-2x.text-danger
             h1.my-4.text-secondary
-              = ('学習')
-    .col-sm-4
+              = t('.ruby_learn')
+    .col-sm-3.ml-5
       .card.rounded-pill.hover_border.border.border-secondary
         = link_to new_user_session_path, class: 'text-secondary' do
           .card-body.text-center
             i.fas.fa-users-cog.fa-2x
             h1.my-4.
-              = ('設定')
+              = t('.set')
 
 
