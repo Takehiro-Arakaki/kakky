@@ -1,5 +1,9 @@
 ja:
   home:
     index:
-      ruby_learn: 学習
+      learn: 学習
       set: 設定
+    select_learn:
+      info_process: 情報処理試験
+    select_set:
+      info_process: 情報処理試験

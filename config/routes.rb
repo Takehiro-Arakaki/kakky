@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  get 'home/show'
+  # get 'home/show'
+  get 'home/select_learn'
+  get 'home/select_set'
+
 
   devise_for :users, :controllers => {
     :sessions => 'users/sessions',
@@ -20,13 +23,36 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :levels do
-      resources :questions
+
+    namespace :ruby do
+      resources :levels do
+        resources :questions
+      end
+      resources :question_selects
     end
-    resources :question_selects
+
+    namespace :info do
+      resources :levels do
+        resources :questions
+      end
+      resources :question_selects
+    end
+
   end
 
-  namespace :player do
+  namespace :ruby do
+    resources :levels do
+      resources :questions do
+        member do
+          post :result
+          get :correct
+          get :incorrect
+        end
+      end
+    end
+  end
+
+  namespace :info do
     resources :levels do
       resources :questions do
         member do

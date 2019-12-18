@@ -1,0 +1,2 @@
+class InfoQuestion < ApplicationRecord
+end

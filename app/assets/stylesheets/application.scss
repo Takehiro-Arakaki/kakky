@@ -48,12 +48,15 @@ a:hover {
   transition: transform 1s;
 }
 
-.page-item.active
-.page-link {
-  background-color:red;
-  border-color: grey;
+#ruby {
+  .page-link {
+    color:red;
+  }
+  .page-item.active
+  .page-link {
+    background-color:red;
+    border-color: grey;
+    color: white;
+  }
 }
 
-.page-link {
-  color:red;
-}

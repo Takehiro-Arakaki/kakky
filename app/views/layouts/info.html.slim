@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title RubyApp
+    title kakkiworld
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -10,8 +10,8 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
-  body#ruby
-    = render 'shared/player_nav'
+  body
+    = render 'shared/info_nav'
 
     div.container
       = render 'shared/notice'
