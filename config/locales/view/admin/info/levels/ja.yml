@@ -2,4 +2,5 @@ ja:
   admin:
     info:
       levels:
-        info_process: 情報処理試験
+        index:
+          info_process: 情報処理試験

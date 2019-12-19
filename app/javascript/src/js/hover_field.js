@@ -16,4 +16,13 @@ $(function(){
       $(event.currentTarget).removeClass('border border-danger');
     }
   );
+
+  $('.hover_border_blue').hover(
+    function(event){
+      $(event.currentTarget).addClass('border border-primary');
+    },
+    function (event) {
+      $(event.currentTarget).removeClass('border border-primary');
+    }
+  );
 });

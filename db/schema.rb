@@ -33,10 +33,12 @@ ActiveRecord::Schema.define(version: 2019_12_18_113221) do
   end
 
   create_table "levels", id: :serial, force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name", limit: 20, null: false
+    t.string "category", limit: 20, null: false
+    t.integer "code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_levels_on_name"
+    t.index ["category", "code"], name: "index_levels_on_category_and_code", unique: true
   end
 
   create_table "question_selects", id: :serial, force: :cascade do |t|
