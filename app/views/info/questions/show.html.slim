@@ -7,7 +7,7 @@
       = simple_format @question.content
 
   = form_with(model: @question, local: true,
-          url: result_player_level_question_path,
+          url: result_info_level_question_path,
           method: :post,
           ) do |form|
     - @question.question_selects.each do |question_select|

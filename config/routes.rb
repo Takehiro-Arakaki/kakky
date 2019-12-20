@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  # get 'home/show'
-  get 'home/select_learn'
-  get 'home/select_set'
-
-
   devise_for :users, :controllers => {
     :sessions => 'users/sessions',
     :registrations => 'users/registrations'
@@ -23,24 +18,22 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-
-    namespace :ruby do
-      resources :levels do
+    resources :courses, only: %i[index] do
+      resources :levels, only: %i[index] do
         resources :questions
       end
       resources :question_selects
     end
-
-    namespace :info do
-      resources :levels do
-        resources :questions
-      end
-      resources :question_selects
-    end
-
   end
 
-  namespace :ruby do
+    # namespace :info do
+    #   resources :levels, only: %i[index] do
+    #     resources :questions
+    #   end
+    #   resources :question_selects
+    # end
+
+  namespace :courses do
     resources :levels do
       resources :questions do
         member do
@@ -52,16 +45,16 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :info do
-    resources :levels do
-      resources :questions do
-        member do
-          post :result
-          get :correct
-          get :incorrect
-        end
-      end
-    end
-  end
+  # namespace :info do
+  #   resources :levels do
+  #     resources :questions do
+  #       member do
+  #         post :result
+  #         get :correct
+  #         get :incorrect
+  #       end
+  #     end
+  #   end
+  # end
 
 end

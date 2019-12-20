@@ -5,13 +5,14 @@
         = ("kaaki-World")
 
   .row.d-flex.justify-content-center.mt-5
-    .col-sm-3.mr-5
-      .card.rounded-pill.hover_border.border.border-secondary
-        = link_to home_select_learn_path do
-          .card-body.text-center
-            i.fas.fa-pen.fa-2x.text-danger
-            h1.my-4.text-secondary
-              = t('.learn')
+    / .col-sm-3.mr-5
+    /   .card.rounded-pill.hover_border.border.border-secondary
+    /     = link_to home_select_learn_path do
+    /       .card-body.text-center
+    /         i.fas.fa-pen.fa-2x.text-danger
+    /         h1.my-4.text-secondary
+    /           = t('.learn')
+
     .col-sm-3.ml-5
       .card.rounded-pill.hover_border.border.border-secondary
         = link_to new_user_session_path, class: 'text-secondary' do

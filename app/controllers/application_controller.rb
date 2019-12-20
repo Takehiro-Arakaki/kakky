@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # deviceにてログイン後の遷移
   def after_sign_in_path_for(resource)
-    home_select_set_path
+    admin_courses_path
   end
 
   def is_disabled

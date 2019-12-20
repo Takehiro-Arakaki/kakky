@@ -13,7 +13,7 @@ module Info
     end
 
     def result
-      question_select = InfoQuestionSelect.find(params[:question_select_id])
+      question_select = QuestionSelect.find(params[:question_select_id])
       # 正解、不正解で遷移先を変更する
       if question_select.answer
         redirect_to correct_info_level_question_url(@level, @question)
@@ -44,7 +44,7 @@ module Info
     end
 
     def set_question
-      @question = InfoQuestion.find(params[:id])
+      @question = Question.find(params[:id])
     end
 
 

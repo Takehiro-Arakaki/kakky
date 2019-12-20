@@ -8,7 +8,7 @@ $(function(){
     }
   );
 
-  $('.hover_border').hover(
+  $('.hover_border_red').hover(
     function(event){
       $(event.currentTarget).addClass('border border-danger');
     },

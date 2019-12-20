@@ -10,35 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_113221) do
+ActiveRecord::Schema.define(version: 2019_12_19_104107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "info_question_selects", id: :serial, force: :cascade do |t|
-    t.integer "question_id", null: false
-    t.text "content", null: false
-    t.boolean "answer", default: false, null: false
+  create_table "courses", force: :cascade do |t|
+    t.string "category", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "info_questions", id: :serial, force: :cascade do |t|
-    t.integer "level_id", null: false
-    t.string "title", default: ""
-    t.string "question_num", null: false
-    t.text "content", default: "", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "levels", id: :serial, force: :cascade do |t|
-    t.string "name", limit: 20, null: false
-    t.string "category", limit: 20, null: false
-    t.integer "code", null: false
+  create_table "levels", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "course_id", null: false
+    t.integer "grade", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category", "code"], name: "index_levels_on_category_and_code", unique: true
   end
 
   create_table "question_selects", id: :serial, force: :cascade do |t|
@@ -49,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_113221) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "questions", id: :serial, force: :cascade do |t|
+  create_table "questions", force: :cascade do |t|
     t.integer "level_id", null: false
     t.string "title", default: ""
     t.string "question_num", null: false

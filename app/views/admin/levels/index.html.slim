@@ -1,0 +1,11 @@
+.container
+
+	- if @course.id == 1
+		= render 'ruby', levels: @levels, course: @course
+	- else
+		= render 'info', levels: @levels, course: @course
+
+	.row
+		.col-md-8
+		.col-md-4.mt-4.text-center
+			= link_to 'Back', admin_courses_path

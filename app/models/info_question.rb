@@ -1,2 +1,0 @@
-class InfoQuestion < ApplicationRecord
-end

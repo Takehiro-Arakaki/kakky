@@ -2,7 +2,7 @@
   h1 = @question.title
 
   = form_with(model: @question, local: true,
-                url: admin_ruby_level_question_path) do |form|
+                url: admin_course_level_question_path) do |form|
 
     = render 'shared/notice'
 
@@ -23,4 +23,4 @@
       .actions.col-1
         = form.submit :submit, class: 'btn btn-danger'
       .col-1
-        = link_to 'Back', admin_ruby_level_questions_path
+        = link_to 'Back', admin_course_level_questions_path
