@@ -1,9 +1,11 @@
 .container
 
-	h1 Levels
+	- if @course.id == 1
+		= render 'ruby', levels: @levels, course: @course
+	- else
+		= render 'info', levels: @levels, course: @course
 
-	h4
-		- @levels.each do |level|
-			= link_to level.name, admin_level_questions_path(level), class: 'ml-3'
-
-	= link_to 'Back', root_path
+	.row
+		.col-md-8
+		.col-md-4.mt-4.text-center
+			= link_to 'Back', admin_courses_path

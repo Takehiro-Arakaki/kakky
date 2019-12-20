@@ -1,0 +1,32 @@
+.container
+  p
+    strong Question
+    / 改行を自動的に入れてくれる
+    = @question.question_num
+    .form-control.w-50.h-auto
+      = simple_format @question.content
+
+  = form_with(model: @question, local: true,
+          url: result_info_level_question_path,
+          method: :post,
+          ) do |form|
+    - @question.question_selects.each do |question_select|
+      button.w-50.my-2.mr-2.text-left.h-auto.select_content type='button' data-toggle='modal' data-target='#exampleModal'
+        = simple_format question_select.content
+
+      / answer_fieldのパラメーター
+      span.select_content[style='display: none']
+        = question_select.id
+
+    / controllerのパラメーター
+    = hidden_field_tag :question_select_id
+
+    = render 'modal'
+
+  .row
+    .col-md-5
+    .col-md-1
+      = link_to 'Back', info_level_questions_path(@level)
+
+
+

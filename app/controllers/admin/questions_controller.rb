@@ -1,7 +1,8 @@
 module Admin
   class QuestionsController < BaseController
     before_action :set_question, only: %i[show edit update]
-    before_action :set_level, only: %i[index show update]
+    before_action :set_level, only: %i[index show update new]
+    before_action :set_course, only: %i[index show update new]
     # before_action :set_question_select
 
     def index
@@ -17,6 +18,11 @@ module Admin
     def show
     end
 
+    def new
+      @questions = @level.questions
+      @questions = @questions.page(params[:page]).per(10)
+    end
+
     def edit
       # 4回newしてanswerの枠を四つにしている
       # ＃TODO: 増やしていく方法も考える
@@ -30,7 +36,7 @@ module Admin
 
     def update
       if @question.update(question_params)
-        redirect_to admin_level_question_url(@level, @question),
+        redirect_to admin_course_level_question_url(@course, @level, @question),
                     notice: I18n.t('success.update')
       else
         render :edit
@@ -44,6 +50,10 @@ module Admin
 
     def set_level
       @level = Level.find(params[:level_id])
+    end
+
+    def set_course
+      @course = Course.find(params[:course_id])
     end
 
     def question_params

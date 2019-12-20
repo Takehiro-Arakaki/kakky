@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  get 'home/show'
-
   devise_for :users, :controllers => {
     :sessions => 'users/sessions',
     :registrations => 'users/registrations'
@@ -20,13 +18,22 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :levels do
-      resources :questions
+    resources :courses, only: %i[index] do
+      resources :levels, only: %i[index] do
+        resources :questions
+      end
+      resources :question_selects
     end
-    resources :question_selects
   end
 
-  namespace :player do
+    # namespace :info do
+    #   resources :levels, only: %i[index] do
+    #     resources :questions
+    #   end
+    #   resources :question_selects
+    # end
+
+  namespace :courses do
     resources :levels do
       resources :questions do
         member do
@@ -37,5 +44,17 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # namespace :info do
+  #   resources :levels do
+  #     resources :questions do
+  #       member do
+  #         post :result
+  #         get :correct
+  #         get :incorrect
+  #       end
+  #     end
+  #   end
+  # end
 
 end

@@ -2,20 +2,16 @@
   h1 = @level.name
 
   - @questions.each do |question|
-    = link_to edit_admin_level_question_path(@level, question) do
+    = link_to edit_admin_course_level_question_path(@course, @level, question) do
       .row.container
-        .col-md-6.form-control.mt-3
+        .col-md-6.form-control.mt-3.hover_scale.hover_border
           = question.question_num
           = question.title
-
-  #edit
-    edit_question
-
   .row
     .col-md-5.mt-4
       = paginate @questions, theme: "bootstrap"
     .col-md-4.mt-4
-      = link_to 'Back', admin_levels_path
+      = link_to 'Back', admin_course_levels_path
 
 
 

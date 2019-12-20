@@ -14,4 +14,4 @@
           .form-control.bg-danger.text-white = t('.correct_answer')
         - else
           .form-control = t('.incorrect_answer')
-  = link_to 'Back', admin_level_questions_path(@level)
+  = link_to 'Back', admin_course_level_questions_path(@course,@level)

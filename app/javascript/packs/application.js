@@ -7,15 +7,31 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+// デフォルトのモーダルを作成
+// Override the default dialog of Rails
+// Rails.confirm = (message, element) =>{
+//   Bootstrap.modal.confirm(message).then(
+
+//     () => {
+//       element.removeAttribute('data-confirm')
+//       element.click()
+//     },
+//     () => {
+//       false
+//     }
+//   )
+//   return false
+// }
+
 require("@rails/ujs").start()
 require("jquery")
 
-import 'src/js/test';
-import 'src/js/drop_field';
-import 'src/js/bootbox_field';
-import 'src/js/answer_field';
-import 'bootstrap';
+import 'src/js/test'
+import 'src/js/drop_field'
+import 'src/js/hover_field'
+import 'src/js/answer_field'
 
+import 'bootstrap'
 import "jquery"
 global.$ = require('jquery')
 

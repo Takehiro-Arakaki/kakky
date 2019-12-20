@@ -1,0 +1,21 @@
+.container
+
+	h1.text-center.mt-5.text-secondary
+		= ('Welcome!!')
+	.row.mt-5
+		- @levels.each_with_index do |level, index|
+			.col-sm-3
+				.card.rounded-pill.hover_scale.hover_border_blue.border.border-secondary
+					= link_to info_level_questions_path(level) do
+						.card-body.text-center.faa-parent.animated-hover
+							- case index
+								- when 0
+									i.fas.fa-book.fa-2x.text-success.faa-horizontal
+								- when 1
+									i.fas.fa-quran.fa-2x.text-info.faa-wrench
+								- when 2
+									i.fas.fa-journal-whills.fa-2x.text-secondary.faa-bounce
+								- when 3
+									i.fas.fa-book-dead.fa-2x.text-warning.faa-burst
+							h1.mb-5.mt-3
+								= level.name
