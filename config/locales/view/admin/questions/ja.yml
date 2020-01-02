@@ -1,0 +1,6 @@
+ja:
+  admin:
+    questions:
+      question_select:
+        correct_answer: 正解
+        incorrect_answer: 不正解

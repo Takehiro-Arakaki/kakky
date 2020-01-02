@@ -25,4 +25,13 @@ $(function(){
       $(event.currentTarget).removeClass('border border-primary');
     }
   );
+
+  $('.hover_border_info').hover(
+    function(event){
+      $(event.currentTarget).addClass('border border-info');
+    },
+    function (event) {
+      $(event.currentTarget).removeClass('border border-info');
+    }
+  );
 });

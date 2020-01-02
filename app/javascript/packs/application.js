@@ -30,6 +30,7 @@ import 'src/js/test'
 import 'src/js/drop_field'
 import 'src/js/hover_field'
 import 'src/js/answer_field'
+// import 'src/js/check_field'
 
 import 'bootstrap'
 import "jquery"

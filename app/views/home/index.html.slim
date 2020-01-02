@@ -2,19 +2,19 @@
   .content
     h1.title.text-center.mt-3
       span.title-part.line-1
-        = ("kaaki-World")
+        = ("Kaaki-World")
 
   .row.d-flex.justify-content-center.mt-5
-    / .col-sm-3.mr-5
-    /   .card.rounded-pill.hover_border.border.border-secondary
-    /     = link_to home_select_learn_path do
-    /       .card-body.text-center
-    /         i.fas.fa-pen.fa-2x.text-danger
-    /         h1.my-4.text-secondary
-    /           = t('.learn')
+    .col-sm-4.mr-5
+      .card.rounded-pill.hover_scale.border.border-secondary.hover_border_info
+        = link_to select_learn_path do
+          .card-body.text-center
+            i.fas.fa-laptop.fa-2x.text-success
+            h1.my-4.text-secondary
+              = t('.learn')
 
-    .col-sm-3.ml-5
-      .card.rounded-pill.hover_border.border.border-secondary
+    .col-sm-4.ml-5
+      .card.rounded-pill.hover_scale.border.border-secondary.hover_border_info
         = link_to new_user_session_path, class: 'text-secondary' do
           .card-body.text-center
             i.fas.fa-users-cog.fa-2x

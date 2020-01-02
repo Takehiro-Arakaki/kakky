@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 		end
 	end
 
-	def show
+	def select_learn
 	end
 
 end

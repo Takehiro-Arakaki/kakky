@@ -27,6 +27,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'popper_js'
 gem 'font-awesome-rails'
+gem 'rubyXL'
 
 
 # Devise

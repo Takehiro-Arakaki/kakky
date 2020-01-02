@@ -211,6 +211,9 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
+    rubyXL (3.4.6)
+      nokogiri (>= 1.4.4)
+      rubyzip (>= 1.1.6)
     ruby_dep (1.5.0)
     rubyzip (1.2.4)
     sass (3.7.4)
@@ -314,6 +317,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 6.0.0)
   rspec-rails
+  rubyXL
   sass-rails (~> 5.0)
   seed-fu
   selenium-webdriver

@@ -4,8 +4,14 @@
 
   - @questions.each do |question|
     .col-md-6.mt-4
-      = link_to question.question_num, ruby_level_question_path(@level, question),
-                                        class: "form-control hover_scale hover_border"
+      .form-control.hover_scale.hover_border_red
+        = link_to ruby_level_question_path(@level, question) do
+          .row
+            .col-sm-1.text-secondary
+              = question.question_num
+            .col.text-secondary
+              = question.title
+
   .row
     .col-md-5.mt-4
       = paginate @questions, theme: "bootstrap"

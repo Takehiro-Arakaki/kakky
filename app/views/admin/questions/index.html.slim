@@ -4,7 +4,7 @@
   - @questions.each do |question|
     = link_to edit_admin_course_level_question_path(@course, @level, question) do
       .row.container
-        .col-md-6.form-control.mt-3.hover_scale.hover_border
+        .col-md-6.form-control.mt-3.hover_scale.hover_border.hover_border_info
           = question.question_num
           = question.title
   .row
