@@ -1,4 +1,5 @@
 $(function(){
+  // 拡大・縮小
   $('.hover_scale').hover(
     function(event){
       $(event.currentTarget).css({transform: "scale(1)"});
@@ -8,6 +9,7 @@ $(function(){
     }
   );
 
+  // 赤
   $('.hover_border_red').hover(
     function(event){
       $(event.currentTarget).addClass('border border-danger');
@@ -17,6 +19,7 @@ $(function(){
     }
   );
 
+  // 青
   $('.hover_border_blue').hover(
     function(event){
       $(event.currentTarget).addClass('border border-primary');
@@ -26,12 +29,13 @@ $(function(){
     }
   );
 
-  $('.hover_border_info').hover(
+  // 黒
+  $('.hover_border_dark').hover(
     function(event){
-      $(event.currentTarget).addClass('border border-info');
+      $(event.currentTarget).addClass('border border-dark');
     },
     function (event) {
-      $(event.currentTarget).removeClass('border border-info');
+      $(event.currentTarget).removeClass('border border-dark');
     }
   );
 });

@@ -1,26 +1,32 @@
-.container
-  h1 = @question.title
+- content_for :title, t('.title')
 
-  = form_with(model: @question, local: true,
-                url: admin_course_level_question_path) do |form|
+h1.text-secondary = @question.title
 
-    = render 'shared/notice'
+= form_with(model: @question, local: true,
+              url: admin_course_level_question_path) do |form|
 
-    .input-group-text.col-md-8.px-0
+  = render 'shared/notice'
+
+  .row
+    .input-group-text.col-md-5.px-0
       = form.label :content, class: 'ml-1'
       = form.text_area :content, class: 'form-control ml-1', rows: '10'
 
-    = form.fields_for :question_selects, @question_selects do |field|
-      .input-group-text.col-md-8.px-0.mt-5
-        = field.text_area :content, class: 'form-control', rows: '3'
+    .input-group-text.col-md-5.px-0.ml-3
+      = form.label :descript, class: 'ml-1'
+      = form.text_area :descript, class: 'form-control ml-1', rows: '10'
 
-      = render 'question_select', field: field, question_selects: @question_selects
+  .row
+    .col-md-5
+      = form.fields_for :question_selects, @question_selects do |field|
+        .input-group-text.px-0.mt-5
+          = field.text_area :content, class: 'form-control', rows: '3'
+        .col-md-12.px-0
+          = render 'question_select', field: field, question_selects: @question_selects
 
-    br
-
-    .row
-      .col-6
-      .actions.col-1
-        = form.submit :submit, class: 'btn btn-info'
-      .col-1
-        = link_to 'Back', admin_course_level_questions_path
+    .col-md-5.mt-5
+      .row
+        .col-md-5.actions.text-center
+          = form.submit '更新', class: 'btn btn-success col-md-8'
+        .col-md-5.col-md-3.pt-2
+          = link_to 'Back', admin_course_level_questions_path

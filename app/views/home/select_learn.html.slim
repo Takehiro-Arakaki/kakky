@@ -1,23 +1,21 @@
-.container
-  .content
-    h1.text-center.mt-5.text-secondary
-      = ("Which Category?")
+- content_for :title, t('.title')
+- content_for :page_center_title, t('.page_center_title')
 
-  .row.d-flex.justify-content-center.mt-5
-    .col-sm-4.mr-5
-      .card.rounded-pill.hover_scale.border.border-secondary
-        = link_to ruby_levels_path do
-          .card-body.text-center
-            i.fas.fa-gem.fa-3x.text-danger
-            h1.my-4.text-secondary
-              = t('.ruby')
+.row.d-flex.justify-content-center.mt-5
+  .col-sm-4.mr-5
+    .card.rounded-pill.hover_scale.border.border-secondary
+      = link_to ruby_levels_path do
+        .card-body.text-center
+          i.fas.fa-gem.fa-3x.text-danger
+          h1.my-4.text-secondary
+            = t('.ruby')
 
-    .col-sm-4.ml-5
-      .card.rounded-pill.hover_scale.border.border-secondary
-        = link_to info_levels_path do
-          .card-body.text-center
-            i.fas.fa-pen.fa-3x.text-primary
-            h1.my-4.
-              = t('.info')
+  .col-sm-4.ml-5
+    .card.rounded-pill.hover_scale.border.border-secondary
+      = link_to info_levels_path do
+        .card-body.text-center
+          i.fas.fa-pen.fa-3x.text-primary
+          h1.my-4.
+            = t('.info')
 
 

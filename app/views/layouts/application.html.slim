@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title RubyApp
+    title = yield :title
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -11,8 +11,9 @@ html
     = javascript_pack_tag 'application'
 
   body
+    .container
+      = render 'shared/notice'
+      h1.text-center.mt-5.text-secondary = yield :page_center_title
+      / = link_to 'サインアップ', new_user_registration_path
 
-    = render 'shared/notice'
-    / = link_to 'サインアップ', new_user_registration_path
-
-    = yield
+      = yield

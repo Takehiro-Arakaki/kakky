@@ -1,6 +1,16 @@
 ja:
   admin:
     questions:
+      edit:
+        title: 編集
+      index:
+        title: 問題選択
       question_select:
+        correct_answer: 正解
+        incorrect_answer: 不正解
+      show:
+        title: 更新
+        question: 問題
+        descript: 解説
         correct_answer: 正解
         incorrect_answer: 不正解

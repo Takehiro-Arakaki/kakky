@@ -1,0 +1,15 @@
+ja:
+  ruby:
+    levels:
+      index:
+        title: Ruby
+        page_center_title: Welcome!!
+    questions:
+      index:
+        title: Ruby
+      show:
+        title: Ruby
+      correct:
+        title: Ruby
+      incorrect:
+        title: Ruby

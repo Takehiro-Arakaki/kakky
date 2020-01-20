@@ -1,7 +1,8 @@
 doctype html
 html
   head
-    title Ruby
+    title = yield :title
+
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -13,7 +14,9 @@ html
   body#ruby
     = render 'shared/ruby_nav'
 
-    div.container
+    .container
       = render 'shared/notice'
-    = yield
+      h1.mt-4.text-secondary = yield :page_title
+      h1.text-center.mt-5.text-secondary = yield :page_center_title
+      = yield
 

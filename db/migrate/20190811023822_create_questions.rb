@@ -5,6 +5,7 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.string :title,             default: ''
       t.string :question_num,      null: false
       t.text :content,             null: false, default: ''
+      t.text :descript,            default: ''
 
       t.timestamps
     end

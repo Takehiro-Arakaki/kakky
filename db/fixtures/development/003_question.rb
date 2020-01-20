@@ -4,7 +4,7 @@ require 'rubyXL'
 
 Question.destroy_all
 
-filename = 'test_rubyXL.xlsx'
+filename = 'kaaki_XL.xlsx'
 workbook = RubyXL::Parser.parse(Rails.root.join('db', 'fixtures', 'files', filename))
 # 一つ目のシートの読み込み
 worksheet = workbook[0]
@@ -23,6 +23,7 @@ cols = {
 }
 
 col_offset = 0
+# Questionにはないカラム
 except_cols = %i[course_id course_name grade grade_name]
 
 (start_row..).each do |row_num|
@@ -33,14 +34,20 @@ except_cols = %i[course_id course_name grade grade_name]
     break unless row
 
     cel = row[idx]
+
     hash[column] = cel&.value || default_value
   end
   break if hash.blank?
 
+  # コースIDとグレードIDからレベルを探します
   level = Level.find_by(course_id: hash[:course_id], grade: hash[:grade])
 
   hash.merge!(level_id: level.id)
+
+  # レベル検索で使用したカラムは不要なためここで削除します
   except_cols.each { |key| hash.delete(key) }
 
   Question.find_or_create_by!(hash)
+
 end
+

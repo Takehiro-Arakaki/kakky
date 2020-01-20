@@ -1,19 +1,19 @@
-.container
+- content_for :title, t('.title')
 
-  h1 = @level.name
+h1.text-secondary = @level.name
 
-  - @questions.each do |question|
-    .col-md-6.mt-4
-      .form-control.hover_scale.hover_border_red
-        = link_to ruby_level_question_path(@level, question) do
-          .row
-            .col-sm-1.text-secondary
-              = question.question_num
-            .col.text-secondary
-              = question.title
+- @questions.each do |question|
+  .col-md-6.mt-4
+    .form-control.hover_scale.hover_border_red
+      = link_to ruby_level_question_path(@level, question) do
+        .row
+          .col-sm-1.text-secondary
+            = question.question_num
+          .col.text-secondary
+            = question.title
 
-  .row
-    .col-md-5.mt-4
-      = paginate @questions, theme: "bootstrap"
-    .col-md-4.mt-4
-      = link_to 'Back', ruby_levels_path
+.row
+  .col-md-5.mt-4
+    = paginate @questions, theme: "bootstrap"
+  .col-md-4.mt-4
+    = link_to 'Back', ruby_levels_path

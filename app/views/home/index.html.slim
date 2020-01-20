@@ -1,3 +1,5 @@
+- content_for :title, t('.title')
+
 .container
   .content
     h1.title.text-center.mt-3
@@ -6,7 +8,7 @@
 
   .row.d-flex.justify-content-center.mt-5
     .col-sm-4.mr-5
-      .card.rounded-pill.hover_scale.border.border-secondary.hover_border_info
+      .card.rounded-pill.hover_scale.border.border-secondary.hover_border_dark
         = link_to select_learn_path do
           .card-body.text-center
             i.fas.fa-laptop.fa-2x.text-success
@@ -14,8 +16,10 @@
               = t('.learn')
 
     .col-sm-4.ml-5
-      .card.rounded-pill.hover_scale.border.border-secondary.hover_border_info
-        = link_to new_user_session_path, class: 'text-secondary' do
+      .card.rounded-pill.hover_scale.border.border-secondary.hover_border_dark
+        / 一時コメントアウト
+        / = link_to new_user_session_path, class: 'text-secondary' do
+        = link_to admin_courses_path, class: 'text-secondary' do
           .card-body.text-center
             i.fas.fa-users-cog.fa-2x
             h1.my-4.
