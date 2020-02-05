@@ -3,20 +3,25 @@
 h2.text-secondary.mb-2
   = @question.title
 
-.form-control.w-50.h-auto
+.form-control.w-75.h-auto
   = simple_format @question.content
 
 = form_with(model: @question, local: true,
         url: result_info_level_question_path,
         method: :post,
         ) do |form|
-  - @question.question_selects.each do |question_select|
-    button.w-50.my-2.mr-2.text-left.h-auto.select_content type='button' data-toggle='modal' data-target='#exampleModal'
-      = simple_format question_select.content
 
-    / answer_fieldのパラメーター
-    span.select_content[style='display: none']
-      = question_select.id
+  - @question.question_selects.each.with_index(1) do |question_select, idx|
+    .row.text-left
+      .col-xs.my-3.p-0
+        = idx
+      .col
+        button.w-50.my-2.mr-2.p-0.text-left.h-auto.select_content.hover_scale.hover_border.hover_border_blue type='button' data-toggle='modal' data-target='#myModal'
+          = simple_format question_select.content
+
+        / answer_fieldのパラメーター
+        span.select_content[style='display: none']
+          = question_select.id
 
   / controllerのパラメーター
   = hidden_field_tag :question_select_id
@@ -25,8 +30,6 @@ h2.text-secondary.mb-2
 
 .row
   .col-md-5
-  .col-md-1
+  .col-md-1.mb-4
     = link_to 'Back', info_level_questions_path(@level)
-
-
 

@@ -4,9 +4,10 @@ h1.text-secondary = @level.name
 
 - @questions.each do |question|
   .col-md-6.mt-4
-    / ここのhoverが効かない
-    = link_to question.question_num, info_level_question_path(@level, question),
-                                      class: "form-control hover_scale hover_border"
+    = link_to "#{question.question_num} #{question.title}",
+      info_level_question_path(@level, question),
+      class: "form-control hover_scale hover_border hover_border_blue"
+
 .row
   .col-md-5.mt-4
     = paginate @questions, theme: "bootstrap"

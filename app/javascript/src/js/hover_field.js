@@ -5,7 +5,7 @@ $(function(){
       $(event.currentTarget).css({transform: "scale(1)"});
     },
     function (event) {
-      $(event.currentTarget).css({transform: "scale(0.8)"});
+      $(event.currentTarget).css({transform: "scale(0.9)"});
     }
   );
 

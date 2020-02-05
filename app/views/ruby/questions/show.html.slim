@@ -11,7 +11,7 @@ h2.text-secondary.mb-2
         method: :post,
         ) do |form|
   - @question.question_selects.each do |question_select|
-    button.w-50.my-2.mr-2.text-left.h-auto.select_content type='button' data-toggle='modal' data-target='#exampleModal'
+    button.w-50.my-2.mr-2.text-left.h-auto.select_content type='button' data-toggle='modal' data-target='#myModal'
       = simple_format question_select.content
 
     / answer_fieldのパラメーター
