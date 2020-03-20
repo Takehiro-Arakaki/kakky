@@ -34,8 +34,8 @@ Rails.application.routes.draw do
       resources :questions do
         member do
           post :result
-          get :correct
-          get :incorrect
+          post :correct
+          post :incorrect
         end
       end
     end
@@ -45,8 +45,8 @@ Rails.application.routes.draw do
       resources :questions do
         member do
           post :result
-          get :correct
-          get :incorrect
+          post :correct
+          post :incorrect
         end
       end
     end

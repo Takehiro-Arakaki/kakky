@@ -29,7 +29,14 @@ h2.text-secondary.mb-2
   = render 'modal'
 
 .row
-  .col-md-5
-  .col-md-1.mb-4
-    = link_to 'Back', info_level_questions_path(@level)
+  .col-md-1.mb-4.text-left
+    / = link_to 'Back', info_level_question_path(@level, @question.previous, page: params[:page]) if @question.previous
+    = link_to 'Back', info_level_question_path(@level, @question.previous) if @question.previous
+  .col-md-4.text-center
+    / = link_to '問題選択', info_level_questions_path(@level, page: params[:page])
+    = link_to '問題選択', info_level_questions_path(@level)
+  .col-md-1
+    / = link_to 'Next', info_level_question_path(@level, @question.next, page: params[:page]) if @question.next
+    = link_to 'Next', info_level_question_path(@level, @question.next) if @question.next
+
 
