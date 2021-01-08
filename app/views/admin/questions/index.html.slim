@@ -1,7 +1,5 @@
 - content_for :title, t('.title')
-
 h1.text-secondary = @level.name
-
 - @questions.each do |question|
   = link_to edit_admin_course_level_question_path(@course, @level, question) do
     .row
@@ -12,6 +10,4 @@ h1.text-secondary = @level.name
     = paginate @questions, theme: "bootstrap"
   .col-md-4.mt-4
     = link_to 'Back', admin_course_levels_path
-
-
 

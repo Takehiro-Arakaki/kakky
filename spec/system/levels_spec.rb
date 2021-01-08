@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :level do
+  factory :levels do
     name { 'テストレベル' }
     description { 'Rspc&Capybara&FactoryBotを準備する' }
     user
