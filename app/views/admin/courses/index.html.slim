@@ -1,3 +1,5 @@
+- content_for :title, t('.title')
+
 .container
   br
   br
@@ -5,7 +7,7 @@
   .row.d-flex.justify-content-center.mt-5
     - @courses.each_with_index do |course, index|
       .col-sm-4.mr-5
-        .card.rounded-pill.hover_scale.border.border-secondary
+        .card.rounded-pill.hover_scale.border.border-secondary.hover_border_dark
           = link_to admin_course_levels_path(course) do
             .card-body.text-center
               - case index

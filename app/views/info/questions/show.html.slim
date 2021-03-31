@@ -1,32 +1,42 @@
-.container
-  p
-    strong Question
-    / 改行を自動的に入れてくれる
-    = @question.question_num
-    .form-control.w-50.h-auto
-      = simple_format @question.content
+- content_for :title, t('.title')
 
-  = form_with(model: @question, local: true,
-          url: result_info_level_question_path,
-          method: :post,
-          ) do |form|
-    - @question.question_selects.each do |question_select|
-      button.w-50.my-2.mr-2.text-left.h-auto.select_content type='button' data-toggle='modal' data-target='#exampleModal'
-        = simple_format question_select.content
+h2.text-secondary.mb-2
+  = @question.title
 
-      / answer_fieldのパラメーター
-      span.select_content[style='display: none']
-        = question_select.id
+.form-control.w-75.h-auto
+  = simple_format @question.content
 
-    / controllerのパラメーター
-    = hidden_field_tag :question_select_id
+= form_with(model: @question, local: true,
+        url: result_info_level_question_path,
+        method: :post,
+        ) do |form|
 
-    = render 'modal'
+  - @question.question_selects.each.with_index(1) do |question_select, idx|
+    .row.text-left
+      .col-xs.my-3.p-0
+        = idx
+      .col
+        button.w-50.my-2.mr-2.p-0.text-left.h-auto.select_content.hover_scale.hover_border.hover_border_blue type='button' data-toggle='modal' data-target='#myModal'
+          = simple_format question_select.content
 
-  .row
-    .col-md-5
-    .col-md-1
-      = link_to 'Back', info_level_questions_path(@level)
+        / answer_fieldのパラメーター
+        span.select_content[style='display: none']
+          = question_select.id
 
+  / controllerのパラメーター
+  = hidden_field_tag :question_select_id
+
+  = render 'modal'
+
+.row
+  .col-md-1.mb-4.text-left
+    / = link_to 'Back', info_level_question_path(@level, @question.previous, page: params[:page]) if @question.previous
+    = link_to 'Back', info_level_question_path(@level, @question.previous) if @question.previous
+  .col-md-4.text-center
+    / = link_to '問題選択', info_level_questions_path(@level, page: params[:page])
+    = link_to '問題選択', info_level_questions_path(@level)
+  .col-md-1
+    / = link_to 'Next', info_level_question_path(@level, @question.next, page: params[:page]) if @question.next
+    = link_to 'Next', info_level_question_path(@level, @question.next) if @question.next
 
 

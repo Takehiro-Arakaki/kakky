@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_104107) do
     t.string "title", default: ""
     t.string "question_num", null: false
     t.text "content", default: "", null: false
+    t.text "descript", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

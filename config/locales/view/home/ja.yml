@@ -1,9 +1,10 @@
 ja:
   home:
     index:
+      title: kakki_world
       learn: 学習
       set: 設定
     select_learn:
-      info_process: 情報処理試験
-    select_set:
-      info_process: 情報処理試験
+      title: 選択
+      info: 情報処理試験
+      page_center_title: Which Catecgory?

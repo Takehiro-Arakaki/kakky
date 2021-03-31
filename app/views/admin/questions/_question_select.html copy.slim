@@ -1,0 +1,15 @@
+.col-md-8.btn-group.mt-2(data-toggle="buttons")
+  / checkが入っている時にactiveを切り替える条件分岐
+  - if question_selects[field.index].answer
+    label.btn.btn-outline-danger.active(style="width:50%")
+  - else
+    label.btn.btn-outline-danger(style="width:50%")
+      = field.radio_button :answer, 1, { checked: question_selects[field.index].answer }
+      = ('true')
+
+  - unless question_selects[field.index].answer
+    label.btn.btn-outline-danger.active(style="width:50%")
+  - else
+    label.btn.btn-outline-danger(style="width:50%")
+      = field.radio_button :answer, 0, { checked: !question_selects[field.index].answer }
+      = ('false')

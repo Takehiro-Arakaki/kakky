@@ -27,6 +27,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'popper_js'
 gem 'font-awesome-rails'
+gem 'rubyXL'
 
 
 # Devise
@@ -77,6 +78,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,17 +1,23 @@
-.container
-  / simple_format: 改行を入れてくれる
-  = @question.question_num
-  .form-control.h-auto.w-75.my-3
-    = simple_format @question.content
+- content_for :title, t('.title')
 
-  - @question.question_selects.each do |question_select|
-    .row.p-0.m-2
-      .form-control.col-sm-6.h-auto
-        = simple_format question_select.content
-      .col-sm-2.ml-2.mt-2.text-center
-        / 動的にクラス分けしています
-        - if question_select.answer
-          .form-control.bg-danger.text-white = t('.correct_answer')
-        - else
-          .form-control = t('.incorrect_answer')
-  = link_to 'Back', admin_course_level_questions_path(@course,@level)
+.row.mt-2
+  .col-md-5
+    = @question.title
+    = simple_format @question.content, class: 'form-control h-auto'
+
+  .col-md-5.ml-3
+    = t('.descript')
+    = simple_format @question.descript, class: 'form-control h-auto'
+
+
+- @question.question_selects.each do |question_select|
+  .row.p-0.m-1
+    .col-md-5.form-control.h-auto.px-0
+      = simple_format question_select.content
+    .col-md-2.mt-2.text-center
+      / 動的にクラス分けしています
+      - if question_select.answer
+        .form-control.bg-danger.text-white = t('.correct_answer')
+      - else
+        .form-control = t('.incorrect_answer')
+= link_to 'Back', admin_course_level_questions_path(@course,@level)

@@ -2,4 +2,7 @@ ja:
   admin:
     levels:
       info:
+        title: 情報処理試験
         info: 情報処理試験
+      ruby:
+        title: Ruby

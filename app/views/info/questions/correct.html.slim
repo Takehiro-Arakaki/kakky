@@ -1,14 +1,25 @@
-.container
-  .text-center.mt-4
-    = image_tag 'maru.png', class: 'no-border'
-    h1 やりおる!!
-    br
 
-  .row
-    .col-sm-4
-    .col-sm-3
-      h3
-        = link_to 'Back', info_level_questions_path(@level)
-    .col
-      h3
-        = link_to 'Next', info_level_question_path(@level, @question.next) if @question.next
+- content_for :title, t('.title')
+
+h4.text-center.text-secondary = @question.title
+
+.text-center.mt-4
+  = image_tag 'maru.png', class: 'no-border'
+  br
+
+.row
+  .col-md-1
+  .col-md-2
+    h3.text-right
+      / = link_to 'Back', info_level_question_path(@level, @question, page: params[:page])
+      = link_to 'Back', info_level_question_path(@level, @question)
+  .col-md-6.mt-3
+    .row
+      .col
+        h5.text-center.text-secondary = t('.descript')
+    .mt-2
+      = simple_format @question.descript, class: 'form-control h-auto'
+  .col-md-2
+    h3
+      / = link_to 'Next', info_level_question_path(@level, @question.next, page: params[:page]) if @question.next
+      = link_to 'Next', info_level_question_path(@level, @question.next) if @question.next

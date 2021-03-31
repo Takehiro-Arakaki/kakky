@@ -1,7 +1,7 @@
 module Ruby
   class BaseController < ApplicationController
 
-    layout 'player'
+    layout 'ruby'
 
   end
 end

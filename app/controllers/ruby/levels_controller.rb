@@ -2,7 +2,7 @@ module Ruby
   class LevelsController < BaseController
 
     def index
-      @levels = Level.all
+      @levels = Level.course_of(1)
     end
 
   end
